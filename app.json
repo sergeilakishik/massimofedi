@@ -1,6 +1,7 @@
 {
   "expo": {
-    "sdkVersion": "20.0.0"
+    "sdkVersion": "20.0.0",
+    "privacy": "unlisted"
   },
   "name": "massimoFedi",
   "displayName": "Massimo Fedi"
