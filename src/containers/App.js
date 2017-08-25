@@ -1,47 +1,10 @@
-import React from 'react';
-import { TouchableHighlight, View, Text, StyleSheet } from 'react-native'
+import React, { Component } from 'react';
+import { TouchableHighlight, View, Text, StyleSheet } from 'react-native';
 
 import { connect } from 'react-redux'
 import { fetchData } from '../actions/dataActions'
 
-let styles
-
-const App = (props) => {
-  const {
-    container,
-    text,
-    button,
-    buttonText,
-    mainContent
-  } = styles
-
-  return (
-    <View style={container}>
-      <Text style={text}>Ract-Native Examples</Text>
-      <Text style={text}>При нажатии на кнопки произойдёт загрузка данные и отображение их ниже</Text>
-      <TouchableHighlight style={button} onPress={() => props.fetchData()}>
-        <Text style={buttonText}>Load Data</Text>
-      </TouchableHighlight>
-      <View style={mainContent}>
-      {
-        props.appData.isFetching && <Text>Loading</Text>
-      }
-      {
-        props.appData.data.length ? (
-          props.appData.data.map((person, i) => {
-            return <View key={i} >
-              <Text>Name: {person.name}</Text>
-              <Text>Age: {person.age}</Text>
-            </View>
-          })
-        ) : null
-      }
-      </View>
-    </View>
-  )
-}
-
-styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     marginTop: 100
   },
@@ -61,15 +24,58 @@ styles = StyleSheet.create({
   mainContent: {
     margin: 10,
   },
-})
+});
 
-function mapStateToProps (state) {
+class App extends Component {
+  constructor (props, context) {
+    super(props);
+  }
+
+  render() {
+    const {
+      container,
+      text,
+      button,
+      buttonText,
+      mainContent
+    } = styles
+
+    const props = this.props;
+
+    return (
+      <View style={container}>
+        <Text style={text}>Ract-Native Examples</Text>
+        <Text style={text}>При нажатии на кнопки произойдёт загрузка данные и отображение их ниже</Text>
+        <TouchableHighlight style={button} onPress={() => props.fetchData()}>
+          <Text style={buttonText}>Load Data</Text>
+        </TouchableHighlight>
+        <View style={mainContent}>
+          {
+            props.appData.isFetching && <Text>Loading</Text>
+          }
+          {
+            props.appData.data.length ? (
+              props.appData.data.map((person, i) => {
+                return <View key={i} >
+                  <Text>Name: {person.name}</Text>
+                  <Text>Age: {person.age}</Text>
+                </View>
+              })
+            ) : null
+          }
+        </View>
+      </View>
+    )
+  }
+}
+
+function mapStateToProps(state) {
   return {
     appData: state.appData
   }
 }
 
-function mapDispatchToProps (dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     fetchData: () => dispatch(fetchData())
   }
