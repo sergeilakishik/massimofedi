@@ -1,7 +1,13 @@
 {
   "expo": {
     "sdkVersion": "20.0.0",
-    "privacy": "public"
+    "privacy": "unlisted",
+    "name": "Massimo Fedi",
+    "slug": "massimo-fedi",
+    "icon": "./src/assets/icon.png",
+    "loading": {
+      "backgroundImage": "./src/assets/screen.png"
+    }
   },
   "name": "massimoFedi",
   "displayName": "Massimo Fedi"
