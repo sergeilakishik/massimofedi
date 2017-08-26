@@ -1,11 +1,11 @@
 const people = [
-  { name: 'Nader', age: 36 },
-  { name: 'Amanda', age: 24 },
-  { name: 'Jason', age: 44 }
-]
+    { name: 'Nader', age: 36, },
+    { name: 'Amanda', age: 24, },
+    { name: 'Jason', age: 44, }
+];
 
 export default () => {
-  return new Promise((resolve, reject) => {
-      return resolve(people);
-  })
-}
+    return new Promise((resolve) => {
+        return resolve(people);
+    });
+};
