@@ -1,8 +1,11 @@
 import React, { Component, } from 'react';
-import { View, Text, } from 'react-native';
+import { Grid, } from 'react-native-easy-grid';
 
 import { connect, } from 'react-redux';
 import { fetchData, } from '../actions/dataActions';
+
+import Home from '../components/Home';
+import Header from '../components/Header';
 
 
 class App extends Component {
@@ -12,9 +15,10 @@ class App extends Component {
 
     render() {
         return (
-            <View>
-                <Text>Hello world</Text>
-            </View>
+            <Grid>
+                <Header />
+                <Home />
+            </Grid>
         );
     }
 }
