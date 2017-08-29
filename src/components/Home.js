@@ -1,11 +1,19 @@
 import React from 'react';
-import { Text, } from 'react-native';
-import { Row, } from 'react-native-easy-grid';
+import { StyleSheet, Text, View, } from 'react-native';
+
+import i18n from '../i18n';
+
+const styles = StyleSheet.create({
+    row: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+});
 
 const Home = () => (
-    <Row size={3}>
-        <Text>Home component</Text>
-    </Row>
+    <View style={styles.row}>
+        <Text>{i18n.t('greeting')}</Text>
+    </View>
 );
 
 export default Home;
