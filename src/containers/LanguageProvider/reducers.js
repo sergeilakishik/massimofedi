@@ -1,10 +1,7 @@
-import { getDeviceLocale, } from 'react-native-device-info';
-import RNDeviceInfo from 'react-native';
-
 import { DEFAULT_LANGUAGE, CHANGE_LANGUAGE, } from './constants';
 
 const languageInitialState = {
-    locale: RNDeviceInfo.NativeModules.RNDeviceInfo ? getDeviceLocale() : DEFAULT_LANGUAGE, // Need this thing for escape error in tests
+    locale: DEFAULT_LANGUAGE,
 };
 
 function languageReducer(state = languageInitialState, action) {

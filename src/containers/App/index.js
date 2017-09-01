@@ -1,6 +1,6 @@
 import React, { PureComponent, } from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Row, } from 'react-native-easy-grid';
+import styled from 'styled-components/native';
 
 import { connect, } from 'react-redux';
 
@@ -9,21 +9,21 @@ import Header from '../../components/Header';
 
 import { changeLanguage, } from '../LanguageProvider/actions';
 
+const AppWripper = styled.View`
+    flex: 1;
+`;
+
 
 class App extends PureComponent {
     render() {
         return (
-            <Grid>
-                <Row>
-                    <Header
-                        onLanguageToggle={this.props.onLanguageToggle}
-                        locale={this.props.locale}
-                    />
-                </Row>
-                <Row>
-                    <Home />
-                </Row>
-            </Grid>
+            <AppWripper>
+                <Header
+                    onLanguageToggle={this.props.onLanguageToggle}
+                    locale={this.props.locale}
+                />
+                <Home />
+            </AppWripper>
         );
     }
 }

@@ -6,13 +6,13 @@
  * i18n component (loaded from `src/locales`)
  */
 
-import React from 'react';
+import React, { PureComponent, } from 'react';
 import PropTypes from 'prop-types';
 import { connect, } from 'react-redux';
 
 import i18n from '../../i18n';
 
-export class LanguageProvider extends React.PureComponent {
+class LanguageProvider extends PureComponent {
     componentWillReceiveProps(nextProps) {
         i18n.locale = nextProps.locale;
     }
