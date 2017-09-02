@@ -1,7 +1,7 @@
 import React, { PureComponent, } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components/native';
-import { NetInfo, Text, View, } from 'react-native';
+import { NetInfo, } from 'react-native';
 import { connect, } from 'react-redux';
 
 import { changeLanguage, } from '../LanguageProvider/actions';
@@ -9,6 +9,7 @@ import connectionState from './actions';
 
 import Home from '../../components/Home';
 import Header from '../../components/Header';
+import ErrorScreen from '../../components/ErrorScreen';
 
 const AppWripper = styled.View`
     flex: 1;
@@ -38,7 +39,9 @@ class App extends PureComponent {
                         <Home />
                     </AppWripper>
                 ) : (
-                    <Text>Connection lost!</Text>
+                    <ErrorScreen
+                        errorMessage="Connection lost"
+                    />
                 )}
             </AppWripper>
         );

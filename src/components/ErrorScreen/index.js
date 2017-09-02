@@ -1,32 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StatusBar, } from 'react-native';
 import styled from 'styled-components/native';
+import logo from './logo_screen.png';
 
-import Img from './Img';
-import logo from './images/logo.png';
-import menu from './images/menu.png';
-import shoppingCart from './images/shopping_cart.png';
-
-const ErrorWrapper = styled.View`
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 30px;
-    padding-bottom: 10px;
+const Img = styled.Image`
+    resize-mode: contain;
+    width: 250px;
+    height: 250px;
 `;
 
-const Header = ({ onLanguageToggle, locale, }) => (
-    <ErrorWrapper>
-        <StatusBar
-            barStyle="dark-content"
-        />
+const ErrorMessage = styled.Text`
+    padding: 30px 0;
+    font-size: 28;
+    color: black;
+`;
 
+const ErrorWrapper = styled.View`
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+`;
+
+const ErrorScreen = ({ errorMessage, }) => (
+    <ErrorWrapper>
+        <Img source={logo} />
+        <ErrorMessage>{errorMessage.toUpperCase()}</ErrorMessage>
     </ErrorWrapper>
 );
 
-Header.propTypes = {
-    onLanguageToggle: PropTypes.func.isRequired,
-    locale: PropTypes.string.isRequired,
+ErrorScreen.defaultProps = {
+    errorMessage: 'Erorr',
 };
 
-export default Header;
+ErrorScreen.propTypes = {
+    errorMessage: PropTypes.string,
+};
+
+export default ErrorScreen;
