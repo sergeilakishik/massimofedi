@@ -4,7 +4,7 @@ const languageInitialState = {
     locale: DEFAULT_LANGUAGE,
 };
 
-function languageReducer(state = languageInitialState, action) {
+const languageReducer = (state = languageInitialState, action) => {
     switch (action.type) {
     case CHANGE_LANGUAGE:
         return {
