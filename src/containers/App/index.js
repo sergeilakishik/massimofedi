@@ -6,8 +6,8 @@ import { connect, } from 'react-redux';
 
 import { changeLanguage, } from '../LanguageProvider/actions';
 import connectionState from './actions';
+import Navigation from '../../navigation';
 
-import Home from '../../components/Home';
 import Header from '../../components/Header';
 import ErrorScreen from '../../components/ErrorScreen';
 
@@ -22,6 +22,7 @@ class App extends PureComponent {
     }
 
     componentWillUnmount() {
+        console.log('sdsdsdsds');
         NetInfo.isConnected.removeEventListener('change', this.props.onConnectionChange);
     }
 
@@ -36,7 +37,7 @@ class App extends PureComponent {
                             onLanguageToggle={this.props.onLanguageToggle}
                             locale={this.props.locale}
                         />
-                        <Home />
+                        <Navigation />
                     </AppWripper>
                 ) : (
                     <ErrorScreen

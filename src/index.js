@@ -3,10 +3,12 @@ import 'babel-polyfill';
 
 import React from 'react';
 import { Provider, } from 'react-redux';
+
 import store from './store';
 
 import App from './containers/App';
 import LanguageProvider from './containers/LanguageProvider';
+
 
 const Root = () => (
     <Provider store={store}>
