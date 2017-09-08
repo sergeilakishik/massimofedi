@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from 'react-native-smart-button';
 import styled from 'styled-components/native';
 
@@ -18,5 +19,12 @@ const Btn = ({ children, }) => (
         {children}
     </BtnStyled>
 );
+
+Btn.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.element),
+        PropTypes.element
+    ]).isRequired,
+};
 
 export default Btn;

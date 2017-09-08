@@ -1,7 +1,7 @@
 import React, { PureComponent, } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components/native';
-import { NetInfo, } from 'react-native';
+import { NetInfo, View, } from 'react-native';
 import { connect, } from 'react-redux';
 
 import { changeLanguage, } from '../LanguageProvider/actions';
@@ -10,6 +10,7 @@ import Navigation from '../../navigation';
 
 import Header from '../../components/Header';
 import ErrorScreen from '../../components/ErrorScreen';
+import Menu from '../../components/Menu';
 
 const AppWripper = styled.View`
     flex: 1;
@@ -30,7 +31,7 @@ class App extends PureComponent {
         const { isConnected, } = this.props;
 
         return (
-            <AppWripper>
+            <View style={{ flex: 1, }}>
                 {isConnected ? (
                     <AppWripper>
                         <Header
@@ -38,13 +39,16 @@ class App extends PureComponent {
                             locale={this.props.locale}
                         />
                         <Navigation />
+                        <Menu />
                     </AppWripper>
                 ) : (
-                    <ErrorScreen
-                        errorMessage="Connection lost"
-                    />
+                    <AppWripper>
+                        <ErrorScreen
+                            errorMessage="Connection lost"
+                        />
+                    </AppWripper>
                 )}
-            </AppWripper>
+            </View>
         );
     }
 }
