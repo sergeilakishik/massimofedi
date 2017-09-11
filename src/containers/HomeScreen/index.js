@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 
 import { Cart, Banner, } from '../../components/MainList';
 import Btn from './Btn';
+import i18n from '../../i18n';
 
 const HomeWrapper = styled.ScrollView`
     flex: 1;
@@ -14,31 +15,32 @@ const HomeScreen = () => (
     >
         <Cart
             bgImg={require('./images/kimano.png')}
-            title="A kimono for every occasion!"
-            description="See our Spring/Summer collection of kimonos"
+            title={i18n.t('homeScreen.kimano.title')}
+            description={i18n.t('homeScreen.kimano.description')}
         >
             <Btn
-                btnTitle="Browse kimonos"
+                btnTitle={i18n.t('homeScreen.kimano.btn')}
             />
         </Cart>
         <Banner
-            title="The Spring/Summer collection is here!"
+            title={i18n.t('homeScreen.banner.title')}
             bgImg={require('./images/banner.png')}
+            btn={i18n.t('homeScreen.banner.btn')}
         />
         <Cart
             bgImg={require('./images/clothes.png')}
         >
             <Btn
-                btnTitle="More clothes"
+                btnTitle={i18n.t('homeScreen.moreClothes.btn')}
             />
         </Cart>
         <Cart
-            title="WANT TO KNOW MORE ABOUT US?"
+            title={i18n.t('homeScreen.aboutUs.title')}
             bgImg={require('./images/about_us.png')}
             inversion
         >
             <Btn
-                btnTitle="Read our story"
+                btnTitle={i18n.t('homeScreen.aboutUs.btn')}
             />
         </Cart>
     </HomeWrapper>

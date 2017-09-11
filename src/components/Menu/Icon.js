@@ -1,9 +1,9 @@
 import styled from 'styled-components/native';
 
 const Img = styled.Image`
-    margin: 0 20px;
-    height: 10px;
-    width: 10px;
+    margin: 0 5px;
+    height: 15px;
+    width: 15px;
     resize-mode: contain;
 `;
 

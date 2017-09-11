@@ -35,6 +35,7 @@
     "react-native": "0.47.2",
     "react-native-button": "^2.1.0",
     "react-native-device-info": "^0.11.0",
+    "react-native-hamburger": "^0.0.2",
     "react-native-i18n": "^2.0.5",
     "react-native-smart-button": "^2.0.0",
     "react-navigation": "^1.0.0-beta.11",

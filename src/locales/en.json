@@ -1,3 +1,30 @@
 {
-    "greeting": "Hello!"
+    "menu": {
+        "search": "SEARCH",
+        "profile": "PROFILE",
+        "whishlist": "WHISHLIST",
+        "catalog": "CATALOG",
+        "collections": "COLLETIONS",
+        "about": "ABOUT",
+        "contacts": "CONTACTS",
+        "help": "HELP"
+    },
+    "homeScreen": {
+        "kimano": {
+            "title": "A kimono for every occasion!",
+            "description": "See our Spring/Summer collection of kimonos",
+            "btn": "Browse kimonos"
+        },
+        "banner": {
+            "title": "The Spring/Summer collection is here!",
+            "btn": "BUY NOW"
+        },
+        "moreClothes": {
+            "btn": "More clothes"
+        },
+        "aboutUs": {
+            "title": "WANT TO KNOW MORE ABOUT US?",
+            "btn": "Read our story"
+        }
+    }
 }

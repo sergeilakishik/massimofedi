@@ -7,23 +7,38 @@ const ItemWrapper = styled(Button) `
     padding: 5px;
 `;
 
-const LanguageItem = ({ children, }) => (
-    <ItemWrapper
-        textStyle={{
-            color: '#eee',
-            fontSize: 12,
-            textDecorationLine: 'line-through',
-        }}
-    >
-        {children}
-    </ItemWrapper>
-);
+const LanguageItem = ({ activated, children, onPress, language, }) => {
+    const textStyle = {
+        color: activated ? '#000000' : 'rgb(133,133,133)',
+        fontSize: 12,
+        textDecorationLine: activated ? 'line-through' : 'none',
+        textDecorationColor: '#000000',
+    };
+
+    return (
+        <ItemWrapper
+            textStyle={textStyle}
+            onPress={() => onPress(language)}
+        >
+            {children}
+        </ItemWrapper>
+    );
+};
+
+LanguageItem.defaultProps = {
+    activated: false,
+    onPress: () => true,
+};
 
 LanguageItem.propTypes = {
     children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.element),
-        PropTypes.element
+        PropTypes.arrayOf(PropTypes.strig),
+        PropTypes.string,
+        PropTypes.node
     ]).isRequired,
+    activated: PropTypes.bool,
+    onPress: PropTypes.func,
+    language: PropTypes.string.isRequired,
 };
 
 export default LanguageItem;

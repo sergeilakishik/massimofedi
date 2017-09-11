@@ -18,13 +18,13 @@ const BtnTitle = styled.Text`
     color: white;
 `;
 
-const Banner = ({ title, bgImg, }) => (
+const Banner = ({ title, bgImg, btn, }) => (
     <BackgroundImg source={bgImg}>
         {title && <Title>{title}</Title>}
         <Btn
             onPress={e => e}
         >
-            <BtnTitle>BUY NOW</BtnTitle>
+            <BtnTitle>{btn}</BtnTitle>
         </Btn>
 
     </BackgroundImg>
@@ -37,6 +37,7 @@ Banner.defaultProps = {
 
 Banner.propTypes = {
     title: PropTypes.string,
+    btn: PropTypes.string.isRequired,
     bgImg: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number

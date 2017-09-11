@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, } from 'react-native';
 import styled from 'styled-components/native';
+import Hamburger from 'react-native-hamburger';
 
 import Img from './Img';
 import logo from './images/logo.png';
-import menu from './images/menu.png';
 import shoppingCart from './images/shopping_cart.png';
 
 
@@ -16,17 +15,21 @@ const HeaderWrapper = styled.View`
     justify-content: space-between;
 `;
 
-const Header = ({ onLanguageToggle, locale, }) => (
+const Header = ({ activeMenu, toggleMenu, }) => (
     <HeaderWrapper>
         <Img source={logo} />
-        <Img source={menu} />
+        <Hamburger
+            active={activeMenu}
+            type="cross"
+            onPress={toggleMenu}
+        />
         <Img source={shoppingCart} />
     </HeaderWrapper>
 );
 
 Header.propTypes = {
-    onLanguageToggle: PropTypes.func.isRequired,
-    locale: PropTypes.string.isRequired,
+    activeMenu: PropTypes.bool.isRequired,
+    toggleMenu: PropTypes.func.isRequired,
 };
 
 export default Header;

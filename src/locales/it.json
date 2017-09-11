@@ -1,3 +1,12 @@
 {
-    "greeting": "Ciao!"
+    "menu": {
+        "search": "SEARCH",
+        "profile": "PROFILE",
+        "whishlist": "WHISHLIST",
+        "catalog": "CATALOGO",
+        "collections": "COLLEZIONI",
+        "about": "ABOUT",
+        "contacts": "CONTATTI",
+        "help": "AIUTO"
+    }
 }
