@@ -8,5 +8,23 @@
         "about": "ABOUT",
         "contacts": "CONTATTI",
         "help": "AIUTO"
+    },
+    "homeScreen": {
+        "kimano": {
+            "title": "Un kimono per ogni occasione!",
+            "description": "Vedi la nostra collezione primavera / estate di kimono",
+            "btn": "Sfoglia kimono"
+        },
+        "banner": {
+            "title": "La collezione Primavera/Estate è qui!",
+            "btn": "ACQUISTA ORA"
+        },
+        "moreClothes": {
+            "btn": "Più vestiti"
+        },
+        "aboutUs": {
+            "title": "VUOI SAPERE PIÙ DI NOI?",
+            "btn": "Leggi la nostra storia"
+        }
     }
 }

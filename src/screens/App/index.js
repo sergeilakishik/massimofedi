@@ -1,12 +1,13 @@
 import React, { PureComponent, } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components/native';
-import { NetInfo, View, Animated, } from 'react-native';
+import { NetInfo, Animated, View, } from 'react-native';
 import { connect, } from 'react-redux';
+import { addNavigationHelpers, } from 'react-navigation';
 
-import { changeLanguage, } from '../LanguageProvider/actions';
+import { changeLanguage, } from '../../services/LanguageProvider/actions';
 import connectionState from './actions';
-import Navigation from '../../navigation';
+import Navigation from '../../services/Navigation';
 
 import Header from '../../components/Header';
 import ErrorScreen from '../../components/ErrorScreen';
@@ -54,7 +55,7 @@ class App extends PureComponent {
     }
 
     render() {
-        const { isConnected, locale, onLanguageToggle, } = this.props;
+        const { isConnected, locale, onLanguageToggle, nav, dispatch, } = this.props;
         const { activeMenu, menuAnimation, } = this.state;
 
         return (
@@ -65,7 +66,13 @@ class App extends PureComponent {
                             activeMenu={activeMenu}
                             toggleMenu={this.toggleMenu}
                         />
-                        <Navigation />
+                        <Navigation
+                            screenProps={locale}
+                            navigation={addNavigationHelpers({
+                                dispatch,
+                                state: nav,
+                            })}
+                        />
                         {activeMenu &&
                             <Menu
                                 menuAnimation={menuAnimation}
@@ -90,12 +97,14 @@ App.propTypes = {
     onLanguageToggle: PropTypes.func.isRequired,
     onConnectionChange: PropTypes.func.isRequired,
     locale: PropTypes.string.isRequired,
+    dispatch: PropTypes.func.isRequired,
     isConnected: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = ({ language, app, }) => ({
+const mapStateToProps = ({ language, app, nav, }) => ({
     locale: language.locale,
     isConnected: app.isConnected,
+    nav,
 });
 
 const mapDispatchToProps = dispatch => ({

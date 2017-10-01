@@ -6,8 +6,8 @@ import { Provider, } from 'react-redux';
 
 import store from './store';
 
-import App from './containers/App';
-import LanguageProvider from './containers/LanguageProvider';
+import App from './screens/App';
+import LanguageProvider from './services/LanguageProvider';
 
 
 const Root = () => (

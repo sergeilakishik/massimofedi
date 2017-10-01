@@ -2,6 +2,8 @@ import React from 'react';
 import { Animated, } from 'react-native';
 import PropTypes from 'prop-types';
 import styled from 'styled-components/native';
+import MenuLink from './MenuLink';
+
 import i18n from '../../i18n';
 
 import LanguageSelect from './LanguageSelect';
@@ -17,14 +19,6 @@ const WrapperMenu = styled(Animated.View)`
 `;
 
 const AnimatedMenu = Animated.createAnimatedComponent(WrapperMenu);
-
-const MenuLink = styled.Text`
-    font-size: 24;
-    font-weight: bold;
-    padding: 5px;
-    color: black;
-    text-decoration-line: ${props => (props.activated ? 'line-through' : 'none')};
-`;
 
 const Menu = ({ menuAnimation, onLanguageToggle, locale, }) => (
     <AnimatedMenu

@@ -6,8 +6,8 @@ const Navigation = StackNavigator(
     {
         Home: {
             screen: HomeScreen,
-            header: null,
             navigationOptions: {
+                header: null,
                 headerStyle: {
                     shadowOpacity: 0,
                     shadowOffset: {
@@ -19,17 +19,5 @@ const Navigation = StackNavigator(
         },
     }
 );
-
-Navigation.navigationOptions = {
-    header: {
-        style: {
-            shadowOpacity: 0,
-            shadowOffset: {
-                height: 0,
-            },
-            elevation: 0,
-        },
-    },
-};
 
 export default Navigation;
